@@ -6,10 +6,8 @@ import numpy as np
 
 __author__ = 'Sarah May'
 
-"""Program to analyze TutorTrac data by producing .png figures and writing results to a csv file.
-
-Update: also for each student, gets amount of time that they spend at each center that they attend. 
-Saves to csv files by year. 
+"""Script to analyze TutorTrac data by producing .png figures and writing results
+of preliminary research questions to a csv file.
 """
 
 ###################################################################
