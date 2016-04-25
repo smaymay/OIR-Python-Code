@@ -17,3 +17,11 @@ sent to the same group of students over the course of four years.
 information to answer preliminary research questions, and creates 
 graphics accordingly.  Also saves results of some research questions
 to CSV files. 
+
+3. analyzecomments contains scripts to analyze open ended responses / 
+comments that might be part of a survey. analyzecomments.py takes in a 
+csv file, where each row is a comment, and writes a table to a new csv 
+file where each row is a comment, each comment is a noun, and the cells are 
+a boolean (1, 0) indicating 1: the noun appears in the comment, or 0: the 
+noun does not appear in the  comment.  Only nouns that appear in > 
+threshold number of comments are included.
