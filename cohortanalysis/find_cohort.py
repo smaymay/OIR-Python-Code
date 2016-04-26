@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import csv
 import argparse 
@@ -50,7 +51,7 @@ def get_surveylist(file, keycol, idcol, survey_dict):
 	"""
 	cd = os.getcwd()
 	#print "\ncurrent working directory:",cd, "\n"
-	with open(cd + "/" + file, "rb") as f: 
+	with open(cd + "/" + file, "rU") as f: 
 		rd_f = csv.reader(f)
 		f_list = list(rd_f)
 
