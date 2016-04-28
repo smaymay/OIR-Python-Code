@@ -10,7 +10,7 @@ and their general purposes should be documented in this README.
 
 Projects:
 
-1. *cohortanalysis* was used originally used to assist in merging separate 
+1. **cohortanalysis** was used originally used to assist in merging separate 
 surveys sent to the same group of students over the course of four years.  
 Typical workflow: Take a bunch of files that map emails (or some other
 variable that is unique to every student in the school) to reponse id's
@@ -23,12 +23,12 @@ utils.py on the output, and then run mergesyntax on the output of
 that. (Future task: Put all of these methods into one easy to use 
 program :) )
 
-2. *tutorvisitsanalysis* is a script that looks tutor data, extracts
+2. **tutorvisitsanalysis** is a script that looks tutor data, extracts
 information to answer preliminary research questions, and creates 
 graphics accordingly.  Also saves results of some research questions
 to CSV files. 
 
-3. *analyzecomments* contains scripts to analyze open ended responses / 
+3. **analyzecomments** contains scripts to analyze open ended responses / 
 comments that might be part of a survey. 
 analyzecomments.py takes in a csv file, where each row is a comment, and writes
 a table to a new csv file where each row is a comment, each column is a word of type 
@@ -38,7 +38,7 @@ words that appear in > threshold number of comments are included.
 Note that to run this you have to have the nltk package installed on your
 machine.
 
-4. *oirmail* contains a file oirmail.py. Running _python oirmail.py_ prompts
+4. **oirmail** contains a file oirmail.py. Running _python oirmail.py_ prompts
 the user to enter the name of a mailbox label in their gmail mailbox.  First
 time users will first be prompted to login and authenticate the app. The 
 script processes all previously un-processed messages in the mailbox label
