@@ -5,6 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 import pandas as pd
 import json
+import math
 
 # commentclusters.py
 # written for the OIR at Wellesley College
@@ -22,7 +23,7 @@ Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet All
 =======================================================================================
 
 Given an excel file, with a specified column name which's rows are comments, 
-creates a json file containing the lists of top words in the cluster.
+creates a json file containing the lists of top words in the cluster, in ranked order.
 
 Example command line:
     $ python commentclusters.py 2016_WELLESLEY_CATCHALLCOMMENTS.xlsx catchall 35 10
@@ -56,10 +57,16 @@ def extractData(data_samples):
     
     tf_feature_names = tfidf_vectorizer.get_feature_names()
     
-    output = {'topics': []}
+    output = {}
     for topic_idx, topic in enumerate(nmf.components_):
-        output['topics'].append(list(([tf_feature_names[i]
-                        for i in topic.argsort()[:-n_top_words - 1:-1]])))
+        wordRank = {}
+        topicList = list(([tf_feature_names[i]
+                        for i in topic.argsort()[:-n_top_words - 1:-1]]))
+        for idx, word in enumerate(topicList):
+            wordRank[word] = math.sqrt(math.sqrt(n_top_words-idx))
+        
+        output['cat-' + str(topic_idx)] = wordRank#list(([tf_feature_names[i]
+                        #for i in topic.argsort()[:-n_top_words - 1:-1]]))
                         
     print("done in %0.3fs." % (time() - t0))
     return output
