@@ -35,7 +35,7 @@ def weighCategory(text):
             weight += clusters[cat][word.lower()]
         except KeyError:
             pass
-    return int((weight)/float(math.sqrt(len(words))) > args.threshold)
+    return int(float(math.sqrt(len(words))) > args.threshold)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
