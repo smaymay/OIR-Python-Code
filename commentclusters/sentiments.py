@@ -28,12 +28,18 @@ def findSentimentOfCat(cat):
     feelings = {'neg': 0, 'neu': 0, 'pos': 0, 'compound': 0}
     
     for comment in catList:
-        ss = sid.polarity_scores(comment)
-        for k in sorted(ss):
-            feelings[k] += ss[k]
+        try:
+            ss = sid.polarity_scores(comment)
+            for k in sorted(ss):
+                feelings[k] += ss[k]
+        except AttributeError:
+            pass
             
     for k in feelings:
-        feelings[k] = feelings[k]/len(catList)
+        try:
+            feelings[k] = feelings[k]/len(catList)
+        except ZeroDivisionError:
+            pass
     
     sentiment[cat] = feelings
 
