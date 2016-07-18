@@ -23,7 +23,7 @@ adds a value for the relationship between cluster and comment, for every cluster
 and comment.
 
 Example command line input:
-    $ python catvalues.py 2016_WELLESLEY_CATCHALLCOMMENTS.xlsx catchall comclust-2016_WELLESLEY_CATCHALLCOMMENTS-35-10.json
+    $ python catvalues.py 2016_WELLESLEY_CATCHALLCOMMENTS.xlsx catchall comclust-2016_WELLESLEY_CATCHALLCOMMENTS-35-10.json .5
 
 """
 
@@ -35,7 +35,7 @@ def weighCategory(text):
             weight += clusters[cat][word.lower()]
         except KeyError:
             pass
-    return int(float(math.sqrt(len(words))) > args.threshold)
+    return int(weight/math.sqrt(len(words)) > args.threshold)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     with open(args.jsonfile) as json_file:
         clusters = json.load(json_file)
     
-    print('Number of clusters: ' + str(len(clusters)))
+    print('Number of clusters: ' + str(len(clusters)))    
     print("done in %0.3fs." % (time() - t0))
     
     print("Calculating and inserting cat values...")

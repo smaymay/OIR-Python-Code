@@ -32,7 +32,7 @@ Example command line:
 
 # Original Author's comment:
 # Load the dataset and vectorize it. We use a few heuristics
-# to filter out useless terms early on: the posts are stripped of headers,
+# to filter out usPaeless terms early on: the posts are stripped of headers,
 # footers and quoted replies, and common English words, words occurring in
 # only one document or in at least 95% of the documents are removed.
 
