@@ -48,13 +48,6 @@ catvalues.py given an excel file with with a specified column name which's
 a json file containing the lists of top words in clusters in ranked orders,
 adds a value for the relationship between cluster and comment, for every cluster 
 and comment.
-analyzecomments.py takes in a csv file, where each row is a comment, and writes
-a table to a new csv file where each row is a comment, each column is a word of type
-POS indicated by an argument, and the cells are a boolean (1, 0) indicating 1: the
-word appears in the comment, or 0: the word does not appear in the  comment.  Only
-words that appear in > threshold number of comments are included.
-Note that to run this you have to have the nltk package installed on your
-machine.
 
 4. **oirmail** contains a file oirmail.py. Running _python oirmail.py_ prompts
 the user to enter the name of a mailbox label in their gmail mailbox.  First
