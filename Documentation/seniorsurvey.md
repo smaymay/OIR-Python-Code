@@ -13,9 +13,9 @@ You can choose the format but I recommend being consistent in how you rename acr
 *Note:* Instead of using the GUI to rename and merge (as described in the tutorial) you can also use SPSS syntax — this will probably be much quicker and painless. You can see the merge syntax output from 2016 to copy / modify in the Drive folder “Senior Surveys / Trends / Cleaning and Combining Files”. It is saved as “2006-2016_mergesyntax.sps”. 
 
 Once you have merged the files, you then have to go through all of the excluded variables and do the following (all in SPSS syntax): 
-(1) check if they have the same value encodings as the variable with the previous years encoding. e.g. some variables might have 0/1 mapped to No/Yes, while their newer counterparts might have the same variable labels mapped to 1/2. If the encodings are different, recode. 
-(2) combine the variables across the years 
-(3) delete the single year version of the variable
+1. check if they have the same value encodings as the variable with the previous years encoding. e.g. some variables might have 0/1 mapped to No/Yes, while their newer counterparts might have the same variable labels mapped to 1/2. If the encodings are different, recode. 
+2. combine the variables across the years 
+3. delete the single year version of the variable
 
 Start by combining the two year variables together, so that you can just do a simple if statement to combine over the years  (e.g. do if year = 2017 … ) 
 
